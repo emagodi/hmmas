@@ -21,7 +21,7 @@ public class SubscriptionRateServiceImp implements SubscriptionRateService {
     }
 
     @Override
-    public List<SubscriptionRate> findAll(int page, int size) {
+    public List<SubscriptionRate> findAll() {
         return null;
     }
 

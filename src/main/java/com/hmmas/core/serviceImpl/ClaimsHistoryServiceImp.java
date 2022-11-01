@@ -24,7 +24,7 @@ public class ClaimsHistoryServiceImp implements ClaimsHistoryService {
     }
 
     @Override
-    public List<ClaimsHistory> findAll(int page, int size) {
+    public List<ClaimsHistory> findAll() {
         return null;
     }
 
@@ -43,4 +43,5 @@ public class ClaimsHistoryServiceImp implements ClaimsHistoryService {
         claimsHistoryRepository.delete(claimsHistory);
 
     }
+
 }

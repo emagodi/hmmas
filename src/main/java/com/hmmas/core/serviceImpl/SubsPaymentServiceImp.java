@@ -24,7 +24,7 @@ public class SubsPaymentServiceImp implements SubsPaymentService {
     }
 
     @Override
-    public List<SubsPayment> findAll(int page, int size) {
+    public List<SubsPayment> findAll() {
         return null;
     }
 

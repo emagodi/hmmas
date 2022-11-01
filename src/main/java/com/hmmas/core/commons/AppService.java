@@ -7,7 +7,7 @@ public interface AppService<T> {
 
     Optional<T> findById(Object id);
 
-    List<T> findAll(int page, int size);
+    List<T> findAll();
 
     Optional<T> create(T t);
 

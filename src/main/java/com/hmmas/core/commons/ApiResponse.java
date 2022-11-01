@@ -9,22 +9,22 @@ public class ApiResponse<T> {
 
     private int status;
     private String message;
-    private T body;
+    private T result;
 
     public ApiResponse(int status, String message) {
         this.status = status;
         this.message = message;
     }
 
-    public ApiResponse(int status, String message, T body) {
+    public ApiResponse(int status, String message, T result) {
         this.status = status;
         this.message = message;
-        this.body = body;
+        this.result = result;
     }
 
-    public ApiResponse(int status, T body) {
+    public ApiResponse(int status, T result) {
         this.status = status;
-        this.body = body;
+        this.result = result;
     }
 
 }

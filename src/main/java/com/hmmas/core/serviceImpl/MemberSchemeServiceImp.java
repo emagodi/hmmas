@@ -23,7 +23,7 @@ public class MemberSchemeServiceImp implements MemberSchemeService {
     }
 
     @Override
-    public List<MemberScheme> findAll(int page, int size) {
+    public List<MemberScheme> findAll() {
         return null;
     }
 

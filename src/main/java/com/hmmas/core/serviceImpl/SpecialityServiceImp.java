@@ -21,7 +21,7 @@ public class SpecialityServiceImp implements SpecialityService {
     }
 
     @Override
-    public List<Speciality> findAll(int page, int size) {
+    public List<Speciality> findAll() {
         return null;
     }
 

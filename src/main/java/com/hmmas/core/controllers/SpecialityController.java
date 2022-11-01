@@ -3,6 +3,7 @@ package com.hmmas.core.controllers;
 import com.hmmas.core.commons.ApiResponse;
 import com.hmmas.core.exceptions.BusinessExceptions;
 import com.hmmas.core.models.Speciality;
+import com.hmmas.core.repository.SpecialityRepository;
 import com.hmmas.core.service.SpecialityService;
 import com.hmmas.core.utils.Status;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,16 +21,19 @@ public class SpecialityController {
     @Autowired
     private SpecialityService specialityService;
 
+    @Autowired
+    private SpecialityRepository specialityRepository;
+
     @PostMapping("/create")
     public ApiResponse<Speciality> create(@RequestBody Speciality speciality){
         speciality = specialityService.create(speciality).orElseThrow(()->new BusinessExceptions("Could not Save New Speciality"));
-        return new ApiResponse<>(HttpStatus.OK.value(), speciality);
+        return new ApiResponse<>(HttpStatus.OK.value(), "success", speciality);
     }
 
     @PostMapping("/update/{id}")
     public ApiResponse<Speciality> update(@RequestBody Speciality speciality){
         speciality = specialityService.update(speciality).orElseThrow(()->new BusinessExceptions("Could Not Update Speciality"));
-        return new ApiResponse<>(HttpStatus.OK.value(), speciality);
+        return new ApiResponse<>(HttpStatus.OK.value(), "success", speciality);
     }
 
     @GetMapping("/delete/{id}")
@@ -37,21 +41,17 @@ public class SpecialityController {
         Speciality speciality = specialityService.findById(id).orElseThrow(()->new BusinessExceptions("Resource Not Found"));
         speciality.setStatus(Status.DELETED);
         specialityService.update(speciality);
-        return new ApiResponse<>(HttpStatus.OK.value(), speciality);
+        return new ApiResponse<>(HttpStatus.OK.value(), "success", speciality);
     }
 
-    @Value("${vms.default.page.size}")
-    private int defaultPageSize;
-
-    @GetMapping("/list/page/{page}/size/{size}")
-    public ApiResponse<List<Speciality>> findAll(@PathVariable("page") int page, @PathVariable("size") int size){
-        size = size <= 0 ? defaultPageSize : size;
-        return new ApiResponse<>(HttpStatus.OK.value(),specialityService.findAll(page, size));
+    @GetMapping("/list/")
+    public ApiResponse<List<Speciality>> findAll(){
+        return new ApiResponse<>(HttpStatus.OK.value(), "success", specialityRepository.findAll());
     }
 
     @GetMapping("/findbyid/{id}")
     public ApiResponse<Speciality> findById(@PathVariable("id") Long id){
         Speciality speciality = specialityService.findById(id).orElseThrow(()->new BusinessExceptions("Resource Not Found"));
-        return new ApiResponse<>(HttpStatus.OK.value(), speciality);
+        return new ApiResponse<>(HttpStatus.OK.value(), "success", speciality);
     }
 }

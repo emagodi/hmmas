@@ -21,7 +21,7 @@ public class MemberServiceImp implements MemberService {
     }
 
     @Override
-    public List<Member> findAll(int page, int size) {
+    public List<Member> findAll() {
         return null;
     }
 

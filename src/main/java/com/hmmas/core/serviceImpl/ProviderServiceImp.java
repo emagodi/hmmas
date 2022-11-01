@@ -21,7 +21,7 @@ public class ProviderServiceImp implements ProviderService {
     }
 
     @Override
-    public List<Provider> findAll(int page, int size) {
+    public List<Provider> findAll() {
         return null;
     }
 
