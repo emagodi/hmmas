@@ -30,7 +30,7 @@ public class SpecialityController {
         return new ApiResponse<>(HttpStatus.OK.value(), "success", speciality);
     }
 
-    @PostMapping("/update/{id}")
+    @PostMapping("/update/")
     public ApiResponse<Speciality> update(@RequestBody Speciality speciality){
         speciality = specialityService.update(speciality).orElseThrow(()->new BusinessExceptions("Could Not Update Speciality"));
         return new ApiResponse<>(HttpStatus.OK.value(), "success", speciality);

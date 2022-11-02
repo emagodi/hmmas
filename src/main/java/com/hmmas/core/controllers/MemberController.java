@@ -32,7 +32,7 @@ public class MemberController {
         return new ApiResponse<>(HttpStatus.OK.value(), "success", member);
     }
 
-    @PostMapping("/update/{id}")
+    @PostMapping("/update/")
     public ApiResponse<Member> update(@RequestBody Member member){
         member = memberService.update(member).orElseThrow(()->new BusinessExceptions("Could Not Update Member Scheme"));
         return new ApiResponse<>(HttpStatus.OK.value(), "success", member);
@@ -45,8 +45,6 @@ public class MemberController {
         memberService.update(member);
         return new ApiResponse<>(HttpStatus.OK.value(), "success", member);
     }
-
-
 
     @GetMapping("/list/")
     public ApiResponse<List<Member>> findAll(){

@@ -29,7 +29,7 @@ public class SubsPaymentController {
         return new ApiResponse<>(HttpStatus.OK.value(), "success", subsPayment);
     }
 
-    @PostMapping("/update/{id}")
+    @PostMapping("/update/")
     public ApiResponse<SubsPayment> update(@RequestBody SubsPayment subsPayment){
         subsPayment = subsPaymentService.update(subsPayment).orElseThrow(()->new BusinessExceptions("Could Not Update Member Scheme"));
         return new ApiResponse<>(HttpStatus.OK.value(), "success", subsPayment);

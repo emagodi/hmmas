@@ -30,7 +30,7 @@ public class MemberSchemeController {
         return new ApiResponse<>(HttpStatus.OK.value(), "success", memberScheme);
     }
 
-    @PostMapping("/update/{id}")
+    @PostMapping("/update/")
     public ApiResponse<MemberScheme> update(@RequestBody MemberScheme memberScheme){
         memberScheme = memberSchemeService.update(memberScheme).orElseThrow(()->new BusinessExceptions("Could Not Update Member Scheme"));
         return new ApiResponse<>(HttpStatus.OK.value(), "success", memberScheme);

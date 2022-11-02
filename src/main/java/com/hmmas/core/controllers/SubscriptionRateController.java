@@ -29,7 +29,7 @@ public class SubscriptionRateController {
         return new ApiResponse<>(HttpStatus.OK.value(), "success", subscriptionRate);
     }
 
-    @PostMapping("/update/{id}")
+    @PostMapping("/update/")
     public ApiResponse<SubscriptionRate> update(@RequestBody SubscriptionRate subscriptionRate){
         subscriptionRate = subscriptionRateService.update(subscriptionRate).orElseThrow(()->new BusinessExceptions("Could Not Update Subscription Rate"));
         return new ApiResponse<>(HttpStatus.OK.value(), "success", subscriptionRate);

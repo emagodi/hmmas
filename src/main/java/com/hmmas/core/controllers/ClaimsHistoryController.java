@@ -32,7 +32,7 @@ public class ClaimsHistoryController {
         return new ApiResponse<>(HttpStatus.OK.value(), "success", claimsHistory);
     }
 
-    @PostMapping("/update/{id}")
+    @PostMapping("/update/")
     public ApiResponse<ClaimsHistory> update(@RequestBody ClaimsHistory claimsHistory){
         claimsHistory = claimsHistoryService.update(claimsHistory).orElseThrow(()->new BusinessExceptions("Could Not Update Claim History"));
         return new ApiResponse<>(HttpStatus.OK.value(), "success", claimsHistory);

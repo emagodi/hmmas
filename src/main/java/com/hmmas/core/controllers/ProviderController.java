@@ -30,7 +30,7 @@ public class ProviderController {
         return new ApiResponse<>(HttpStatus.OK.value(), "success", provider);
     }
 
-    @PostMapping("/update/{id}")
+    @PostMapping("/update/")
     public ApiResponse<Provider> update(@RequestBody Provider provider){
         provider = providerService.update(provider).orElseThrow(()->new BusinessExceptions("Could Not Update Provider"));
         return new ApiResponse<>(HttpStatus.OK.value(), "success", provider);
