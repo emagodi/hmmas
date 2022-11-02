@@ -1,7 +1,6 @@
 package com.hmmas.core.utils;
 
-public enum schemename {
-
+public enum Schemename {
     Basic,
     Primary,
     Premium,
