@@ -32,9 +32,6 @@ public class ClaimsHistory extends BaseEntity {
     @Column(name = "claimid", nullable = false)
     private Long claimid;
 
-    @Column(name = "schemeid", nullable = false)
-    private int schemeid;
-
     @Column(name = "treatmentdate", nullable = false)
     private Date treatmentdate;
 
