@@ -14,9 +14,6 @@ import javax.persistence.Table;
 @Table(name = "subscriptionrate")
 public class SubscriptionRate extends BaseEntity {
 
-    @Column(name = "schemeid", nullable = false)
-    private Long schemeid;
-
     @Column(name = "schemename", nullable = false)
     private String schemename;
 
