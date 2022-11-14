@@ -24,9 +24,6 @@ public class SubsPayment extends BaseEntity {
     @Column(name = "surname", nullable = false)
     private String surname;
 
-    @Column(name = "schemeid", nullable = false)
-    private int schemeid;
-
     @Column(name = "schemename", nullable = false)
     private String schemename;
 
