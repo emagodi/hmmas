@@ -36,9 +36,6 @@ public class Member extends BaseEntity {
     @Column(name = "nationalid", nullable = false)
     private String nationalid;
 
-    @Column(name = "schemeid", nullable = false)
-    private int schemeid;
-
     @Column(name = "schemename", nullable = false)
     private String schemename;
 
