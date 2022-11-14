@@ -10,9 +10,6 @@ import java.util.Date;
 @Table(name = "member_schemes")
 public class MemberScheme extends BaseEntity {
 
-    @Column(name = "schemeid", nullable = false)
-    private Long schemeid;
-
     @Column(name = "schemename", nullable = false)
     private String schemename;
 
