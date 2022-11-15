@@ -1,5 +1,6 @@
 package com.hmmas.core.models;
 
+import com.hmmas.core.utils.MemberType;
 import com.hmmas.core.utils.Status;
 import com.hmmas.core.utils.SubscriptionType;
 import lombok.Data;
@@ -27,8 +28,9 @@ public class Member extends BaseEntity {
     @Column(name = "suffix", nullable = false)
     private int suffix;
 
+    @Basic(optional = false)
     @Column(name = "membertype", nullable = false)
-    private String membertype;
+    private MemberType memberType;
 
     @Column(name = "dateofbirth", nullable = false)
     private Date dateofbirth;

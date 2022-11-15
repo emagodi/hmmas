@@ -1,7 +1,7 @@
 package com.hmmas.core.utils;
 
 public enum MemberType {
-    ADULT_MEMEBR,
+    ADULT_MEMBER,
     ADULT_DEPENDENT,
     CHILD,
     SPECIAL_ADULT,
